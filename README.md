@@ -1,3 +1,35 @@
+# Neptune 4 Plus MCU Recovery
+
+![Status](https://img.shields.io/badge/status-resolved-brightgreen)
+![Focus](https://img.shields.io/badge/focus-firmware%20debugging-blue)
+
+---
+
+## Overview
+
+After a failed firmware update, my Elegoo Neptune 4 Plus became non-functional and booted into a persistent Klipper error:
+
+> "Option serial in section mcu must be specified"
+
+Although the system UI remained responsive, all hardware control was lost. This indicated a failure not at the operating system level, but in the communication between the Klipper host and the printer’s MCU.
+
+---
+
+## Note
+
+This project documents a real-world troubleshooting process. Screenshots were not captured during the process, but all observations and steps are accurately recorded.
+
+---
+
+## System Architecture
+
+The printer consists of two primary systems:
+
+- **Host System (Linux / Klipper Host)**  
+  Handles the operating system, UI, and high-level control
+
+- **MCU (Mainboard Firmware)**  
+  Controls motors, heaters, and sensors, and communicates with the host over a serial interface
 
 The failure occurred at the communication boundary between these two systems.
 
